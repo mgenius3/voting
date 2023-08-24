@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* flex-wrap: wrap; */
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+  text-align: center;
+  color: #ca3db4;
+}
+
+.candidates {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.candidate {
+  text-align: center;
+  margin: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.candidate img {
+  max-width: 200px;
+  border: 1px solid #ccc;
+}
+
+.candidate.selected {
+  border: 2px solid #3498db;
+}
+
+.votebutton {
+  margin-top: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.verification {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#verification-id {
+  padding: 5px;
+}
+
+#verifybutton {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 5px 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.contain {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.input {
+  /* width: 100%; */
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.client {
+  color: black !important;
+  font-weight: bolder;
+}
