@@ -51,6 +51,7 @@ export default function Pins() {
               <th style={cellStyles}>#</th>
               <th style={cellStyles}>Pin</th>
               <th style={cellStyles}>Vote Count</th>
+              <th style={cellStyles}>Pin Used</th>
             </tr>
           </thead>
           <tbody>
@@ -59,6 +60,7 @@ export default function Pins() {
                 <td style={cellStyles}>{index + 1}</td>
                 <td style={cellStyles}>{pinData.pin}</td>
                 <td style={cellStyles}>{pinData.voteCount}</td>
+                <td style={cellStyles}>{`${pinData.used}`}</td>
               </tr>
             ))}
           </tbody>

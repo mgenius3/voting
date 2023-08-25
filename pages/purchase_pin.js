@@ -27,9 +27,10 @@ export default function AdminPurchase() {
     for (let i = 0; i < 50; i++) {
       setLoading(true);
       if (voteCount && (voteCount === "5" || voteCount === "10")) {
-        const pinRef = ref(db, `votersPin/${generateRandomPin()}`);
+        let currentPin = generateRandomPin();
+        const pinRef = ref(db, `votersPin/${currentPin}`);
         set(pinRef, {
-          // pin: generateRandomPin(),
+          pin: currentPin,
           voteCount: parseInt(voteCount),
           used: false,
         })
