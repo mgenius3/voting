@@ -12,7 +12,7 @@ const VerificationForm = ({
       <input
         type="text"
         id="verification-id"
-        placeholder="Enter Voter ID"
+        placeholder="Enter Voter PIN"
         value={verificationId}
         onChange={onVerificationIdChange}
       />

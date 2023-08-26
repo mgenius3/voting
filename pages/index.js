@@ -89,11 +89,11 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <Head>
-          <title>Enter Voting ID</title>
+          <title>Enter Voting Pin</title>
           <link rel="icon" href="/images/contestant1.jpeg" />
         </Head>
 
-        <h1 className={styles.title}>Enter Voting ID</h1>
+        <h1 className={styles.title}>Enter Voting Pin</h1>
         <VerificationForm
           verificationId={verificationId}
           onVerificationIdChange={(e) => setVerificationId(e.target.value)}
@@ -113,13 +113,13 @@ export default function Home() {
         <link rel="icon" href="/images/contestant1.jpeg" />
       </Head>
 
-      <h1 className={styles.title}>Vote for Your Favorite Client</h1>
+      <h1 className={styles.title}>Vote for Your Favorite Candidates</h1>
       <div className={styles.candidates}>
         <CandidateCard
-          id={"Da Rex robot"}
+          id={"Faithfulness"}
           imageUrl="images/contestant1.jpeg"
           onClick={handleCandidateSelect}
-          selected={selectedCandidate === "Da Rex robot"}
+          selected={selectedCandidate === "Faithfulness"}
         />
         <CandidateCard
           id={"QueenAnder"}
@@ -128,54 +128,55 @@ export default function Home() {
           selected={selectedCandidate === "QueenAnder"}
         />
         <CandidateCard
-          id={"Originaljioke"}
-          imageUrl="images/contestant3.jpeg"
-          onClick={handleCandidateSelect}
-          selected={selectedCandidate === "Originaljioke"}
-        />
-        <CandidateCard
-          id={"Anointed Dancer"}
-          imageUrl="images/contestant4.jpeg"
-          onClick={handleCandidateSelect}
-          selected={selectedCandidate === "Anointed Dancer"}
-        />
-        <CandidateCard
-          id={"Jemervy"}
-          imageUrl="images/contestant5.jpeg"
-          onClick={handleCandidateSelect}
-          selected={selectedCandidate === "Jemervy"}
-        />
-        <CandidateCard
-          id={"Worth B"}
-          imageUrl="images/contestant6.jpeg"
-          onClick={handleCandidateSelect}
-          selected={selectedCandidate === "Worth B"}
-        />
-        <CandidateCard
-          id={"GT BAE"}
-          imageUrl="images/contestant7.jpeg"
-          onClick={handleCandidateSelect}
-          selected={selectedCandidate === "GT BAE"}
-        />
-
-        <CandidateCard
-          id={"Faithfullness"}
-          imageUrl="images/contestant8.jpeg"
-          onClick={handleCandidateSelect}
-          selected={selectedCandidate === "Faithfullness"}
-        />
-        <CandidateCard
           id={"Naomi"}
-          imageUrl="images/contestant9.jpeg"
+          imageUrl="images/contestant3.jpeg"
           onClick={handleCandidateSelect}
           selected={selectedCandidate === "Naomi"}
         />
         <CandidateCard
-          id={"ZEALOTS 4 CHRIST"}
+          id={"GT BAE"}
+          imageUrl="images/contestant4.jpeg"
+          onClick={handleCandidateSelect}
+          selected={selectedCandidate === "GT BAE"}
+        />
+        <CandidateCard
+          id={"zealots 4 Christ"}
+          imageUrl="images/contestant5.jpeg"
+          onClick={handleCandidateSelect}
+          selected={selectedCandidate === "zealots 4 Christ"}
+        />
+        <CandidateCard
+          id={"Abunwa Chioma"}
+          imageUrl="images/contestant6.jpeg"
+          onClick={handleCandidateSelect}
+          selected={selectedCandidate === "Abunwa Chioma"}
+        />
+        <CandidateCard
+          id={"Da-rex Robot"}
+          imageUrl="images/contestant7.jpeg"
+          onClick={handleCandidateSelect}
+          selected={selectedCandidate === "Da-rex Robot"}
+        />
+
+        <CandidateCard
+          id={"Esther"}
+          imageUrl="images/contestant8.jpeg"
+          onClick={handleCandidateSelect}
+          selected={selectedCandidate === "Esther"}
+        />
+        <CandidateCard
+          id={"Originaljioke"}
+          imageUrl="images/contestant9.jpeg"
+          onClick={handleCandidateSelect}
+          selected={selectedCandidate === "Originaljioke"}
+        />
+        <CandidateCard
+          id={"The Mantle"}
           imageUrl="images/contestant10.jpeg"
           onClick={handleCandidateSelect}
-          selected={selectedCandidate === "ZEALOTS 4 CHRIST"}
+          selected={selectedCandidate === "The Mantle"}
         />
+        {/*
         <CandidateCard
           id={"Esther"}
           imageUrl="images/contestant11.jpeg"
@@ -200,7 +201,7 @@ export default function Home() {
           imageUrl="images/contestant14.jpeg"
           onClick={handleCandidateSelect}
           selected={selectedCandidate === "Abuwa Chioma"}
-        />
+        /> */}
         {/* Add more CandidateCard components as needed */}
         <ToastContainer position="bottom-center" />
       </div>
