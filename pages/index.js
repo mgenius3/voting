@@ -113,7 +113,7 @@ export default function Home() {
         <link rel="icon" href="/images/contestant1.jpeg" />
       </Head>
 
-      <h1 className={styles.title}>Vote for Your Favorite Candidates</h1>
+      <h1 className={styles.title}>Vote for Your Favorite Contestant</h1>
       <div className={styles.candidates}>
         <CandidateCard
           id={"Faithfulness"}
