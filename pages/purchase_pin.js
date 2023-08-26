@@ -26,7 +26,13 @@ export default function AdminPurchase() {
   const handlePurchase = () => {
     for (let i = 0; i < 50; i++) {
       setLoading(true);
-      if (voteCount && (voteCount === "5" || voteCount === "10")) {
+      if (
+        voteCount &&
+        (voteCount === "5" ||
+          voteCount === "10" ||
+          voteCount === "20" ||
+          voteCount === "50")
+      ) {
         let currentPin = generateRandomPin();
         const pinRef = ref(db, `votersPin/${currentPin}`);
         set(pinRef, {
@@ -69,6 +75,8 @@ export default function AdminPurchase() {
           <option value="">Select Vote Count</option>
           <option value="5">5 Votes</option>
           <option value="10">10 Votes</option>
+          <option value="20">20 Votes</option>
+          <option value="50">50 Votes</option>
         </select>
       </div>
       <button onClick={handlePurchase} className={styles.button}>
