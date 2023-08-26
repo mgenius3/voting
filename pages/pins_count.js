@@ -60,7 +60,12 @@ export default function Pins() {
                 <td style={cellStyles}>{index + 1}</td>
                 <td style={cellStyles}>{pinData.pin}</td>
                 <td style={cellStyles}>{pinData.voteCount}</td>
-                <td style={cellStyles}>{`${pinData.used}`}</td>
+                <td
+                  style={{
+                    color: pinData.used ? "red" : "green",
+                    textAlign: "center",
+                  }}
+                >{`${pinData.used}`}</td>
               </tr>
             ))}
           </tbody>
@@ -72,5 +77,5 @@ export default function Pins() {
 
 const cellStyles = {
   padding: "12px",
-  textAlign: "left",
+  textAlign: "center",
 };
