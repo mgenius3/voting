@@ -70,7 +70,8 @@ const ResultsPage = () => {
               <tr
                 key={index}
                 style={{
-                  color: index === 0 ? "goldenrod" : "black",
+                  color:
+                    index === 0 ? "goldenrod" : index === 1 ? "gold" : "black",
 
                   fontWeight:
                     index === 0 || index === 1 || index === 2
