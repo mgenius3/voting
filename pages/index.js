@@ -89,19 +89,24 @@ export default function Home() {
     return (
       <div className={styles.container}>
         <Head>
-          <title>Enter Voting Pin</title>
+          {/* <title>Enter Voting Pin</title> */}
+          <title>Voting is closed</title>
+
           <link rel="icon" href="/images/contestant1.jpeg" />
         </Head>
 
-        <h1 className={styles.title}>Enter Voting Pin</h1>
-        <VerificationForm
+        {/* <h1 className={styles.title}>Enter Voting Pin</h1> */}
+        {/* <VerificationForm
           verificationId={verificationId}
           onVerificationIdChange={(e) => setVerificationId(e.target.value)}
           onVerify={handleVerify}
           loading={verifyloading}
         />
 
-        <Message text={message} />
+        <Message text={message} /> */}
+        <p style={{ color: "red", fontSize: "100px", textAlign: "center" }}>
+          VOTING IS CLOSED
+        </p>
         <ToastContainer position="bottom-center" />
       </div>
     );
