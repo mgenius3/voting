@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { firebaseConfig } from "../configdb/db";
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, get } from "firebase/database";
 import resultsStyles from "../styles/Results.module.css";
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
 
@@ -23,12 +23,21 @@ const ResultsPage = () => {
 
         snapshot.forEach((childSnapshot) => {
           const vote = childSnapshot.val();
-
-          console.log(vote);
           votesData.push(vote);
         });
 
-        setResults(votesData);
+        // Sort the results by the number of votes in descending order
+        const sortedResults = votesData.sort(
+          (a, b) => b.noCandidateVote - a.noCandidateVote
+        );
+
+        // Assign ranks based on the sorted order
+        const rankedResults = sortedResults.map((vote, index) => ({
+          ...vote,
+          rank: index + 1,
+        }));
+
+        setResults(rankedResults);
       } catch (error) {
         console.error("Error fetching vote results:", error);
       }
@@ -48,6 +57,7 @@ const ResultsPage = () => {
         <table className={resultsStyles.resultsTable}>
           <thead>
             <tr>
+              <th>RANK</th>
               <th>CANDIDATE NAME</th>
               <th>NO OF VOTES</th>
             </tr>
@@ -55,6 +65,7 @@ const ResultsPage = () => {
           <tbody>
             {results.map((vote, index) => (
               <tr key={index}>
+                <td>{vote.rank}</td>
                 <td>{vote.candidateId}</td>
                 <td>{vote.noCandidateVote ?? 0}</td>
               </tr>
