@@ -31,10 +31,13 @@ const ResultsPage = () => {
           (a, b) => b.noCandidateVote - a.noCandidateVote
         );
 
+        // Map numeric ranks to their corresponding strings (1st, 2nd, 3rd, etc.)
+        const rankStrings = ["1st", "2nd", "3rd", "4th", "5th" /* ... */];
+
         // Assign ranks based on the sorted order
         const rankedResults = sortedResults.map((vote, index) => ({
           ...vote,
-          rank: index + 1,
+          rank: rankStrings[index] || `${index + 1}th`,
         }));
 
         setResults(rankedResults);
