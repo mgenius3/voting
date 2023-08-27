@@ -11,6 +11,7 @@ const db = getDatabase(app);
 
 const ResultsPage = () => {
   const [results, setResults] = useState([]);
+  const [winner, setWinner] = useState(null); // State to store the winner
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +31,11 @@ const ResultsPage = () => {
         const sortedResults = votesData.sort(
           (a, b) => b.noCandidateVote - a.noCandidateVote
         );
+
+        // Set the winner based on the first element in the sortedResults array
+        if (sortedResults.length > 0) {
+          setWinner(sortedResults[0]);
+        }
 
         // Map numeric ranks to their corresponding strings (1st, 2nd, 3rd, etc.)
         const rankStrings = ["1st", "2nd", "3rd", "4th", "5th" /* ... */];
@@ -57,6 +63,29 @@ const ResultsPage = () => {
       </Head>
 
       <div className={resultsStyles.results}>
+        {/* Display the winner */}
+        {winner && (
+          <div className={resultsStyles.winner}>
+            <h2>
+              Winner: <b style={{ color: "green" }}>{winner.candidateId}</b>
+            </h2>
+            <p
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "start",
+              }}
+            >
+              Number of Votes:{" "}
+              <b style={{ color: "red", fontSize: "40px" }}>
+                {" "}
+                {winner.noCandidateVote ?? 0}
+              </b>{" "}
+            </p>
+          </div>
+        )}
+
+        {/* Display the results table */}
         <table className={resultsStyles.resultsTable}>
           <thead>
             <tr>

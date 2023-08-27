@@ -26,3 +26,15 @@
 .resultsTable th {
   background-color: #f2f2f2;
 }
+
+.winner {
+  background: black;
+  color: white !important;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0px;
+}
+
+.winner * {
+  color: white;
+}
