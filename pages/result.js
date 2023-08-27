@@ -71,7 +71,7 @@ const ResultsPage = () => {
                 key={index}
                 style={{
                   color:
-                    index === 0 ? "goldenrod" : index === 1 ? "gold" : "black",
+                    index === 0 ? "goldenrod" : index === 1 ? "gold" : "white",
 
                   fontWeight:
                     index === 0 || index === 1 || index === 2
