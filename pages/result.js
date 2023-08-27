@@ -67,7 +67,17 @@ const ResultsPage = () => {
           </thead>
           <tbody>
             {results.map((vote, index) => (
-              <tr key={index}>
+              <tr
+                key={index}
+                style={{
+                  color: index === 0 ? "goldenrod" : "black",
+
+                  fontWeight:
+                    index === 0 || index === 1 || index === 2
+                      ? "bolder"
+                      : "normal",
+                }}
+              >
                 <td>{vote.rank}</td>
                 <td>{vote.candidateId}</td>
                 <td>{vote.noCandidateVote ?? 0}</td>
